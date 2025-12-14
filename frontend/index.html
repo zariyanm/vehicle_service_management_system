@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Service Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>🚗 Vehicle Service Management</h1>
+            <p>Track and manage vehicle service records efficiently</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Add Service Form Section -->
+            <section class="card">
+                <h2 class="section-title">Add New Service</h2>
+                <form id="serviceForm" class="service-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vehicle_no">Vehicle Number <span class="required">*</span></label>
+                            <input type="text" id="vehicle_no" placeholder="e.g., MH-12-AB-1234" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="owner_name">Owner Name <span class="required">*</span></label>
+                            <input type="text" id="owner_name" placeholder="e.g., Muhammad Zariyan" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service_type">Service Type <span class="required">*</span></label>
+                            <select id="service_type" required>
+                                <option value="">Select Service Type</option>
+                                <option value="Oil Change">Oil Change</option>
+                                <option value="Brake Service">Brake Service</option>
+                                <option value="Tire Rotation">Tire Rotation</option>
+                                <option value="Full Service">Full Service</option>
+                                <option value="Engine Repair">Engine Repair</option>
+                                <option value="AC Service">AC Service</option>
+                                <option value="Battery Replacement">Battery Replacement</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="service_date">Service Date <span class="required">*</span></label>
+                            <input type="date" id="service_date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="next_service_date">Next Service Date</label>
+                            <input type="date" id="next_service_date">
+                        </div>
+                        <div class="form-group">
+                            <label for="cost">Cost (₹)</label>
+                            <input type="number" id="cost" placeholder="e.g., 1500" step="0.01" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="remarks">Remarks</label>
+                        <textarea id="remarks" rows="3" placeholder="Any additional notes..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span id="btnText">Add Service</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Search Section -->
+            <section class="card">
+                <h2 class="section-title">Search Service Records</h2>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search by vehicle number..." class="search-input">
+                    <button class="btn btn-primary" id="searchBtn">Search</button>
+                    <button class="btn btn-secondary" id="showAllBtn">Show All</button>
+                </div>
+            </section>
+
+            <!-- Message Display -->
+            <div id="messageContainer"></div>
+
+            <!-- Service List Section -->
+            <section class="card">
+                <h2 class="section-title">Service Records</h2>
+                <div class="table-container">
+                    <table class="service-table" id="serviceTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Vehicle No.</th>
+                                <th>Owner Name</th>
+                                <th>Service Type</th>
+                                <th>Service Date</th>
+                                <th>Next Service</th>
+                                <th>Cost (₹)</th>
+                                <th>Remarks</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="serviceTableBody">
+                            <!-- Data will be loaded here dynamically -->
+                        </tbody>
+                    </table>
+                    <div id="noDataMessage" class="no-data" style="display: none;">
+                        <p>No service records found</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Vehicle Service Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
