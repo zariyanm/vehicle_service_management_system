@@ -3,7 +3,8 @@
 // ============================================
 
 // API Base URL
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://vehicle-service-backend.up.railway.app/api';
+
 
 // Global Variables
 let isEditMode = false;
