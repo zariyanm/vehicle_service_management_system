@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignore environment files
 *.env
 
@@ -5,3 +6,7 @@
 node_modules/
 backend/node_modules/
 frontend/node_modules/
+=======
+node_modules/
+.env
+>>>>>>> 67c3260c4e2554836a8211ceecee574088b475de
